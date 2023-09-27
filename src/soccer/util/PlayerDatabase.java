@@ -7,7 +7,18 @@ import java.util.*;
 import soccer.play.Player;
 
 public class PlayerDatabase  {
+    
+    
     private ArrayList <Player> players;
+    
+     public PlayerDatabase(){
+        StringTokenizer soccerPlayersTokens = new StringTokenizer (soccerPlayers,",");
+        players = new ArrayList();
+        
+        while(soccerPlayersTokens.hasMoreTokens()){
+            players.add(new Player(soccerPlayersTokens.nextToken()));
+        }
+    }
     
     public PlayerDatabase(String soccerPlayers){ //String soccerPlayers
         StringTokenizer soccerPlayersTokens = new StringTokenizer(soccerPlayers,",");

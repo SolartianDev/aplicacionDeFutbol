@@ -1,3 +1,39 @@
-/nbproject/
-/build/
-/dist/
+try{
+    // Crea un arreglo de equipos usando el método createTeams de la liga
+    Team[] theTeams = theLeague.createTeams(teamNames, teamSize);
+    
+    // Crea un arreglo de juegos usando el método createGames de la liga
+    Game[] theGames = theLeague.createGames(theTeams);
+    
+    // Imprime un anuncio de la liga basado en los juegos creados
+    System.out.println(theLeague.getLeagueAnnouncement(theGames));
+    
+    // Itera a través de los juegos y los juega uno por uno
+    for(Game currGame : theGames){
+        currGame.playGame();
+        // Imprime la descripción del juego (resultado) en modo detallado
+        System.out.println(currGame.getDescription(true));
+    }
+    
+    // Calcula y establece estadísticas de equipo utilizando los equipos y juegos
+    theLeague.setTeamStats(theTeams, theGames);
+    
+    // Calcula y establece estadísticas de jugador utilizando los juegos
+    theLeague.setPlayerStats(theGames);
+    
+    // Muestra una lista de los mejores jugadores de la liga
+    theLeague.showBestPlayersByLeague(theTeams);
+    
+    // Muestra una lista de los mejores equipos de la liga
+    theLeague.showBestTeam(theTeams);
+    
+    // Obtiene una cuadrícula de datos de la liga y juegos
+    IDisplayDataItem[][] dataGrid = theLeague.getLeagueDataGrid(theGames, theTeams);
+    
+    // Muestra la cuadrícula de datos en formato de texto
+    theLeague.outputTextLeagueGrid(dataGrid);
+    
+} catch(PlayerDatabaseException e) {
+    // En caso de excepción (error en la base de datos de jugadores), imprime la traza del error
+    e.printStackTrace(System.err);
+}

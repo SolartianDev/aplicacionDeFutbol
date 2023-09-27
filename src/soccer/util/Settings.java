@@ -10,7 +10,7 @@ public class Settings {
     static public final double DAYS_BETWEEN_GAMES = 7;
     
     
-    static public final int DRAW_GAME_POINTS = 1;
+    static public final int DRAWN_GAME_POINTS = 1;
     static public final int WINNER_GAME_POINTS = 3;
     static public final int LOSER_GAME_POINTS = 0;
     

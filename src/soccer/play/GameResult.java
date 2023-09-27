@@ -1,4 +1,3 @@
-
 package soccer.play;
 
 import soccer.event.GameEvent;

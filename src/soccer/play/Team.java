@@ -69,7 +69,7 @@ public class Team  implements Comparable, IDisplayDataItem {
     }
     
     public void incPointsTotal(int points){
-        this.pointsTotal =+ points;
+        this.pointsTotal += points;
     }
     
     @Override
@@ -124,7 +124,7 @@ public class Team  implements Comparable, IDisplayDataItem {
         this.goalsTotal = goalsTotal;
     }
     
+   
     
-    
-    
+ 
 }
